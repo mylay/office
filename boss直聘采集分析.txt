@@ -1,0 +1,55 @@
+boss直聘采集信息
+
+
+公司名称 
+公司规模
+公司地址
+
+职位名称
+薪酬
+职位描述
+
+工作经验
+学历要求
+发布页面
+
+
+get 请求 
+https://www.zhipin.com/job_detail/?query=爬&scity=101280600&industry=&position=
+
+query 爬虫
+
+sctiy 101280600 （深圳）
+
+industry 行业
+
+position 职位编号
+
+
+获取的数据是网页的，不是json数据
+网页下载器，网页解析器，实现翻页 
+
+
+
+参考代码
+https://blog.csdn.net/weixin_42836351/article/details/82767916
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
