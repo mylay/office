@@ -18,7 +18,9 @@ def readHtml():
         # print(content)
 
 list=[]
-def parse_index():
+
+#解析index页面，并实现翻页
+def parse_index(html):
     headers = {
         'upgrade-insecure-requests': "1",
         'user-agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36",
@@ -30,7 +32,6 @@ def parse_index():
     }
 
 
-    html=readHtml()
     job_urls = html.xpath('//div[@class="info-primary"]/h3/a/@href')
     print(job_urls)
     for job_url in job_urls:
@@ -41,6 +42,13 @@ def parse_index():
         parse_detail(obj,url)
         time.sleep(0.2)
         # response = requests.request("GET", job_url, headers=headers, callback=parse_detail())
+
+    next_page_url=html.xpath('//a[@class="next"]/@href')
+    if len(next_page_url)!=0:
+        next_page_url = url_prefix+next_page_url
+        response=requests.request("GET", next_page_url, headers=headers)
+        obj=response.text
+        parse_index(obj)
 
 
 #解析详情页
@@ -94,13 +102,13 @@ def parse_detail(html,url):
 
 
 #翻页
-def parse_next_page():
-    pass
+# def parse_next_page():
+
 
 
 if __name__ == "__main__":
-    parse_index()
-    print(list)
-    with open('data.txt', 'w') as f:
-        s=str(list)
-        f.write(s)
+    parse_index(html=readHtml())
+    # print(list)
+    # with open('data.txt', 'w') as f:
+    #     s=str(list)
+    #     f.write(s)
