@@ -1,0 +1,4 @@
+
+1、学会使用抓包工具charles和接口测试工具postman
+charles快捷方便的抓取api
+postman模拟head和参数，完成请求，同时能快捷生成python请求代码
