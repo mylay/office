@@ -1,0 +1,61 @@
+
+日期 date   入住天数 days   城市名 cityName
+
+api "http://www.bgyhotel.com:8089/geo/q/cities?_=1546261538459"
+api http://localhost:8888/?date=20190103&days=2&cityName=guangzhou
+
+
+.NETFramework Version=v4.6
+
+Host: gitbook.cn
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://gitbook.cn/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: _ga=GA1.2.1947286974.1546485216; _gid=GA1.2.981166410.1546998674; customerId=5c04eb876e1feb2ee57bdb49; customerToken=d0627db0-f6d6-11e8-84d7-dda2538adc04; customerMail=; isLogin=yes; connect.sid=s%3AlGb7LZNbrMom-ZeoT37Xf0IcTzdMFJFC.BYvigyXKYYeUwQ5E83wiEgeH6soHu7EWkuRbivHR71w; aliyungf_tc=AQAAAFXROl2OywsAeNd6d5TyHI3NW1/2; SERVER_ID=5aa5eb5e-cf15479d; Hm_lvt_5667c6d502e51ebd8bd9e9be6790fb5d=1547101279,1547101613,1547103180,1547103440; Hm_lpvt_5667c6d502e51ebd8bd9e9be6790fb5d=1547103443
+If-None-Match: W/"11a5e-OCsjwu/DNOY6PaAODSCUmw"
+
+
+
+https://gitbook.cn/gitchat/free 免费GitChat文章 
+
+GitChat
+40 https://gitbook.cn/gitchat/free/20/40?searchKey=
+
+60 https://gitbook.cn/gitchat/free/40/60?searchKey=
+
+
+import requests
+
+
+class GrabGitChat():
+	
+	def getUrl(self):
+		
+		headers = {
+		'Host': "gitbook.cn",
+		'Connection': "keep-alive",
+		'Cache-Control': "max-age=0",
+		'Upgrade-Insecure-Requests': "1",
+		'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36",
+		'Accept': "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+		'Accept-Encoding': "gzip, deflate, br",
+		'Accept-Language': "zh-CN,zh;q=0.9",
+		'cache-control': "no-cache",
+		'Postman-Token': "719fe353-0ccf-46a3-a84e-4b7871285de2"
+		}
+		
+		response=requests.request("GET", headers=headers, url)
+		
+		print(response.text)
+		
+	
+对于爬取没有问题，如何高效完成分析，必须对xpath读取非常熟悉，总结成博客
+网络爬虫基础
+https://blog.csdn.net/gongbing798930123/article/details/78955597		
+		
+		
